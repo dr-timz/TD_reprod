@@ -1,0 +1,36 @@
+---
+title: "analyse_titanic"
+author: "Fatima-zahra Saad"
+date: "2025-11-27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+ 
+## Tp titanic
+
+```{r}
+library(carData)
+head(TitanicSurvival)
+```
+
+# titanic
+```{r}
+df <- TitanicSurvival
+summary(df)
+```
+
+```{r}
+library(ggplot2)
+ggplot(df, aes(survived,fill=sex)) +
+  geom_bar(position = "dodge")+
+  theme_minimal()
+```
+
+```{r}
+ggplot(df, aes(passengerClass,fill=survived)) +
+  geom_bar(position = "dodge")+
+  theme_minimal()
+```
